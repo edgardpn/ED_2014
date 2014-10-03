@@ -1,0 +1,4 @@
+a) Na linha 4, "p = x;", há um erro. Como foi definido na linha 2 que p é um ponteiro e ponteiros recebem endereços de memória, a correção necessária seria: "p = &x;".
+
+
+
