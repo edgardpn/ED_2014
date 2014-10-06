@@ -1,1 +1,2 @@
-A diferença entre "v[3]" e "v+3" num vetor é que o primeiro obtém o valor do quarto elemento do vetor e o segundo obtém o endereço do mesmo. 
+    A diferença entre "v[3]" e "v+3" em um vetor é que o primeiro obtém o valor do quarto elemento do vetor e o segundo obtém o endereço do mesmo.
+ 
