@@ -1,4 +1,33 @@
 a) Na linha 4, "p = x;", há um erro. Como foi definido na linha 2 que p é um ponteiro e ponteiros recebem endereços de memória, a correção necessária seria: "p = &x;".
+Correção:
 
+void main() { 
+int x, *p; 
+x = 100; 
+p = &x;  
+printf(“Valor de p: %d.\n”, *p); 
+}
 
+b) A variável temp não precisa ser um ponteiro. Ela somente armazena o valor de *i para que a troca seja efetuada.
+
+Correção:
+
+void troca (int *i, int *j) { 
+int temp; 
+temp = *i;  
+*i = *j;  
+*j = temp; 
+} 
+
+c)Para que se tenha um ponteiro, é necessário que haja primeiramente um endereço de memória definido, espaço alocado na memória.
+O erro do código está justamente na inicialização do ponteiro sem que se tenha um endereço de memória a ser apontado. 
+Neste problema não há necessidade do uso de ponteiro e a verificação deve ser feita letra por letra.  
+
+Correção:
+
+char a[] = "abacate",b[] = "uva";  
+if (a[0] < b[0]) 
+ printf ("%s vem antes de %s no dicionário", a, b); 
+else 
+ printf ("%s vem depois de %s no dicionário", a, b); 
 
