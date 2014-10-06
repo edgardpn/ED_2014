@@ -1,0 +1,9 @@
+int a[99]; 
+for (i = 0; i < 99; ++i) a[i] = 98 ­ i; 
+for (i = 0; i < 99; ++i) a[i] = a[a[i]];
+
+Na primeira linha do código, foi definido um vetor de inteiros de 99 posições.
+Na segunda linha, o vetor é preenchido na ordem descrescente de 98 a 0.(ordem crescentes dos índices)
+Já na terceira linha, o vetor é preenchido na ordem crescente até a sua metade, ou seja 99/2=49. 
+Após o índice 49, o vetor volta a ser preenchido de forma descrescente pois a primera parte já havia 
+sofrido a inversão.    
