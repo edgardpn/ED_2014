@@ -24,10 +24,17 @@ O erro do código está justamente na inicialização do ponteiro sem que se ten
 Neste problema não há necessidade do uso de ponteiro e a verificação deve ser feita letra por letra.  
 
 Correção:
-
-char a[] = "abacate",b[] = "uva";  
-if (a[0] < b[0]) 
- printf ("%s vem antes de %s no dicionário", a, b); 
-else 
- printf ("%s vem depois de %s no dicionário", a, b); 
+//Verificação até a segunda letra.
+void main(){
+char a[] = "abacate", b[] = "mendoim";
+if (a[0] < b[0]) {
+printf ("%s vem antes de %s no dicionário \n", a, b);
+}
+else if(a[0]== b[0] && a[1] < b[1]){
+printf ("%s vem antes de %s no dicionário \n", a, b);
+}
+else {
+printf ("%s vem depois de %s no dicionário \n", a, b);
+}
+}
 
