@@ -1,0 +1,10 @@
+int x = 100, *p, **pp; 
+p = &x; 
+pp = &p; 
+printf(“Valor de pp: %d\n”, **pp); 
+
+Resposta: 
+na primeira linha do código, são definidos a variável x, um ponteiro e outro ponteiro de um ponteiro.
+Na segunda linha, o ponteiro "p" aponta para o endereço de memória da variável x.
+Na terceira linha, o ponteiro "pp" aponta para o ponteiro "p" que por sua vez já possui o valor do endereço de memória de x.
+Na quarta linha, é impresso o valor contido na variavél x através do ponteiro para ponteiro "pp".  
