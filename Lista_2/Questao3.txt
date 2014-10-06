@@ -1,0 +1,1 @@
+Como o endereço de v[0] é 55000, o endereço de memória de v+3 será 8*3+55000=55024.
