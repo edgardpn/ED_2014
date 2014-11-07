@@ -2,29 +2,32 @@
 #include<stdio.h>
 #include "pilha.h"
 
-void push(int n)
+int push(int n)
 {
-	struct node *nw;
-	nw=(struct node*)malloc(sizeof(struct node));
-	nw->item=n;
-	nw->next=NULL;
-	if(top==NULL)
-	{
-		top=nw;
-	}
-	else
-	{
-		nw->next=top;
-		top=nw;
-	}
+    struct node *nw;
+    nw=(struct node*)malloc(sizeof(struct node));
+    if(nw != NULL){
+        nw->item=n;
+        nw->next=NULL;
+        if(top==NULL){
+            top=nw;
+        }else{
+            nw->next=top;
+            top=nw;
+        }
+        return 1;
+    }else{
+        return 0;
+    }    
 }
+    
 
 int pop(){
      int item;
      struct node *ptr;
      if(top==NULL)
      {
-	  printf("\nA pilha esta vazia!\n");
+	  printf("\nA pilha esta vazia!\n") ;
      }
      else
      {
@@ -32,8 +35,8 @@ int pop(){
 	ptr=top;
 	top=top->next;
 	free(ptr);
+        return item;
      }
-return item;
 }
 
 void display()

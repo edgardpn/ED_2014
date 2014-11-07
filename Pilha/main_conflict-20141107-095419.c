@@ -40,7 +40,6 @@ void main(){
 				scanf("%d",&n);
 				if(push(n)==1){
                                     printf("Valor inserido na pilha.");
-                                    display();
                                 }else{
                                     printf("Falha ao armazenar valor na pilha.");
                                 }
@@ -49,7 +48,6 @@ void main(){
                             resp=pop();
                             if(resp!=0){
 				printf("\nO elemento removido foi: %d \n", resp);
-                                display();
                             }else{
                                 printf("A pilha está vazia!");
                             }
@@ -60,17 +58,14 @@ void main(){
 		
 			case 4:
 				printf("\nO elemento do topo da pilha é: %d\n",topelement());
-                                display();
 				break;
 			case 5:
 				printf("\nPilha possui %d elementos\n", stack_count());
-                                display();
 				break;
 			case 6:
 				printf("Digite o elemento que deseja procurar: ");
 				scanf("%d",&n);
 				localiza(n);
-                                display();
 				break;
 
 		}

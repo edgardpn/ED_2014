@@ -1,12 +1,12 @@
-
 struct node
 {
        int item;
        struct node *next;
 };
+
 struct node *top;
 
-void push(int n);
+int push(int n);
 int pop();
 void display();
 int topelement();
