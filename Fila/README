@@ -1,0 +1,6 @@
+Para compilar:
+    cc -o povoamento fila.c povoamento2.c
+
+Para executar:
+    ./povoamento <<< "tamanho_da_fila"     
+    Ex: para tamanho = 200 : ./povoamento <<< "200"
