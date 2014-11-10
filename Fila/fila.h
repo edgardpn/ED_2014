@@ -5,11 +5,11 @@ struct node
 }*front,*rear,*temp,*front1;
  
 int frontelement();
-void enq(int data);
-void deq();
+int enq(int data);
+int deq();
 void empty();
 void display();
 void destroy();
 void create();
-void queuesize();
+int queuesize();
 void localiza();

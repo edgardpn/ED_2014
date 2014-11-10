@@ -1,6 +1,8 @@
 #include "fila.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
+
 int count = 0;
 
 void create()
@@ -8,89 +10,104 @@ void create()
     front = rear = NULL;
 }
  
-void queuesize()
+int queuesize()
 {
-    printf("\n Tamanho da fila:  %d", count);
+    return count;
 }
  
-void enq(int data)
+int enq(int data)
 {
     if (rear == NULL)
     {
         rear = (struct node *)malloc(1*sizeof(struct node));
+        if(!rear){
+            printf("Sem memória!");
+        }else{
         rear->ptr = NULL;
         rear->info = data;
         front = rear;
+        }
     }
     else
     {
         temp=(struct node *)malloc(1*sizeof(struct node));
+        if(!rear){
+            printf("Sem memória!");
+        }else{
         rear->ptr = temp;
         temp->info = data;
         temp->ptr = NULL;
         rear = temp;
+        }
     }
     count++;
+    return rear->info;
 }
  
-void deq()
+int deq()
 {
     front1 = front;
+    int resp;
  
     if (front1 == NULL)
     {
         printf("\n Fila vazia!!!");
         return;
     }
-    else
+    else{
         if (front1->ptr != NULL)
         {
             front1 = front1->ptr;
-            printf("\n Item eliminado: %d", front->info);
+            resp=front->info;
             free(front);
             front = front1;
         }
         else
         {
-            printf("\n Item eliminado: %d", front->info);
+            resp=front->info;
             free(front);
-            front = NULL;
-            rear = NULL;
+            create();
         }
         count--;
+        return resp;
+    }
 }
 
 void localiza(int data)
 {   
-    int k=0;
+    int k=0,loc=0;
 	front1 = front;
     if (front1 == NULL)
     {
         printf("\n Fila esta vazia!!!");
         return;
-    }
-    while (front1 != NULL)
-    {
-        if (front1->info==data)
+    }else{
+        while (front1 != NULL)
         {
-           printf("\n Item %d localizado", front1->info);   
-		   return;        	
-        }   
-        front1 = front1->ptr;     
+            loc++;
+            if (front1->info==data)
+            {
+                printf("\n Item %d localizado na posição %d da fila", front1->info,loc);
+                k=1;
+            	      	
+           }   
+            front1 = front1->ptr;     
+        }
+        if (k==0){
+            printf("\n Item %d nao localizado", data); 
+        }
     }
-    if (k==0)
-       printf("\n Item %d nao localizado", data);   
 }
 
 int frontelement()
 {   
-    int e=0;
-    if ((front != NULL) && (rear != NULL))
-        e=(front->info);
-    if (e != 0)
-	   printf("\n Item de topo da fila:  %d", e);
-    else
-       printf("\n Fila vazia!!!");
+    if ((front == NULL) && (rear == NULL)){
+        printf("\n Fila vazia!!!");
+        return -99;
+    }else{
+       return front->info;
+       
+    }
 }
  
 void display()
@@ -102,7 +119,7 @@ void display()
         printf("\n Fila vazia!!!");
         return;
     }
-    printf("\n Relatorio Itens Flla: ");      
+        
     while (front1 != rear)
     {
         printf("\n %d ", front1->info);
@@ -115,20 +132,17 @@ void display()
 void destroy()
 {
     front1 = front;
+    int i;
     if (front1 == NULL)
     {
         printf("\n Fila vazia!!!");
         return;
     }
     else
-    {
-        front1 = front->ptr;
-        free(front);
-        front = front1;
-        front1 = front1->ptr;
-    }
-    free(front1);
-    front = NULL;
+	for(i=1;i=count;i++){
+	deq();
+	}
+
     printf("\n Fila eliminada!!!");
 }
 
