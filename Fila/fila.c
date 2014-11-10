@@ -52,7 +52,7 @@ int deq()
     if (front1 == NULL)
     {
         printf("\n Fila vazia!!!");
-        return;
+        return -99;
     }
     else{
         if (front1->ptr != NULL)
@@ -125,8 +125,9 @@ void display()
         printf("\n %d ", front1->info);
         front1 = front1->ptr;
     }
-    if (front1 == rear)
+    if (front1 == rear){
         printf("\n %d", front1->info);
+    }
 }
 
 void destroy()

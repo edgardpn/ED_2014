@@ -38,7 +38,7 @@ void main(){
 	if(op!=9){
 		switch(op){
 			case 1:
-				printf("Digite um valor inteiro:");
+				printf("Digite um valor inteiro diferente de -99:");
 				scanf("%d",&n);
 				if(enq(n)==n){
                                     display();
@@ -48,7 +48,12 @@ void main(){
                                 }
 				break;
 			case 2:
-                                printf("\nO elemento removido foi: %d \n", deq());
+                                resp =deq();
+                                if(resp==-99){
+                                    printf("\n");
+                                }else{
+                                printf("\nO elemento removido foi: %d \n", resp);
+                                }
                                 display();
                             	break;
 			case 3:

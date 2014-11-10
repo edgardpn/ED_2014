@@ -12,4 +12,4 @@ void display();
 void destroy();
 void create();
 int queuesize();
-void localiza();
+void localiza(int data);

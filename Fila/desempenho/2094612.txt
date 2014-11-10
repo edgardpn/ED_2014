@@ -1,0 +1,18 @@
+[3;J[H[2J
+Tempo de execução do povoamento da fila (2094612 elementos): 0.257542
+
+Tempo de execução listar fila (2094612 elementos): 0.031077
+ Item 100 nao localizado
+Tempo de execução busca elemento nao existente na fila (2094612 elementos): 0.028880
+
+Tempo de execução do tamanho da fila (2094612 elementos): 0.000000 
+
+
+Tempo de execução do topo da fila (2094612 elementos): 0.000002 
+
+
+Tempo de execução remover 1 elemento da fila(2094612 elementos): 0.000008 
+
+ Fila eliminada!!!
+
+Tempo de execução para destruir fila(2094611 elementos): 0.118181 
