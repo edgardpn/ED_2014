@@ -1,5 +1,5 @@
 Para compilar programa:
-    cc -o fila fila.c main.c
+    cc -o fila fila.c main2.c
 
 Para compilar o script de povoamento:
     cc -o povoamento fila.c povoamento2.c
