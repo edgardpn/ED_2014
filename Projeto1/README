@@ -1,0 +1,5 @@
+#########Programa principal###############
+Para compilar programa:
+    cc -o mercado pilha.c main.c
+
+
