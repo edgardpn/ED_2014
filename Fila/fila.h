@@ -13,3 +13,4 @@ void destroy();
 void create();
 int queuesize();
 void localiza(int data);
+void geraval(int *vet,int tamvet);

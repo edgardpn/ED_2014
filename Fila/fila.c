@@ -119,14 +119,14 @@ void display()
         printf("\n Fila vazia!!!");
         return;
     }
-        
+    printf("\n");    
     while (front1 != rear)
     {
-        printf("\n %d ", front1->info);
+        printf("%d ", front1->info);
         front1 = front1->ptr;
     }
     if (front1 == rear){
-        printf("\n %d", front1->info);
+        printf("%d", front1->info);
     }
 }
 
@@ -145,5 +145,15 @@ void destroy()
 	}
 
     printf("\n Fila eliminada!!!");
+}
+
+void geraval(int *vetor,int tamvet)
+{
+    int i;
+    
+    srand( (unsigned)time(NULL) );
+
+    for(i=0 ; i < tamvet ; i++)
+        enq(rand()%100);
 }
 
