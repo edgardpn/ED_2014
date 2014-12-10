@@ -1,0 +1,5 @@
+O programa está com um erro no armazenamento das strings no vetor.
+
+Para compilar:
+
+gcc -o hash hash2.c
