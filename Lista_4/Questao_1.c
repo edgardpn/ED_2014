@@ -25,6 +25,7 @@ void push(char nome[40],float qthoras,float salh,char depto[3],int matricula)
 		strcpy(nw->nome,nome);
 		nw->qthoras=qthoras;
 		nw->salh=salh;
+		saltotal=saltotal+salh;
 		strcpy(nw->depto,depto);
 		nw->matricula=matricula;
 		nw->next=NULL;
@@ -52,14 +53,46 @@ int localizasalmax()
 		salmax=ptr->salh;
 		idsalmax=ptr->id;
 		while(ptr->next!=NULL){
+			ptr=ptr->next;
 			if (salmax < ptr->salh){
         		salmax=ptr->salh;
 				idsalmax=ptr->id;
-			}ptr=ptr->next;  
+			}  
 	  	}	
 	  }
 	return idsalmax;
 }
+
+void imprimecadastro(int n)
+{  int idsalmax; 
+	if(top==NULL)
+     {
+	  printf("\nVazio!");
+	  }
+     else{
+     	
+     	struct node *ptr;
+		ptr=top;
+		if (ptr->id==n){
+        		printf("\nNome: %s",ptr->nome);
+        		printf("\nHoras: %2.0f",ptr->qthoras);
+        		printf("\nSalário: R$%2.2f",ptr->salh);
+        		printf("\nDepartamento: %s",ptr->depto);
+        		printf("\nMatricula: %d",ptr->matricula);
+			}else {
+				while(ptr->next!=NULL){
+				ptr=ptr->next;
+				if (ptr->id==n){
+        			printf("\nNome: %s",ptr->nome);
+        			printf("\nHoras: %2.0f",ptr->qthoras);
+        			printf("\nSalário: R$%2.2f",ptr->salh);
+        			printf("\nDepartamento: %s",ptr->depto);
+        			printf("\nMatricula: %d",ptr->matricula);
+				}
+	  		}
+	  	}	
+	  }
+	}
    
 void main(){
 	int op,n,resp;
@@ -104,7 +137,9 @@ void main(){
                                     printf("Erro!");
                                     
                                 }else{
-                                    printf("%d",salmax);
+                                    printf("%d",resp);
+                                    imprimecadastro(resp);
+                                    printf("\nSoma dos salários: %f", saltotal);
                                 }
 				
 				break;
