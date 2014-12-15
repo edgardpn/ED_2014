@@ -1,0 +1,8 @@
+#########Programa principal###############
+Para compilar programa:
+    gcc -o arv arvgen.c
+
+Povoamento:
+./arv < input
+
+
